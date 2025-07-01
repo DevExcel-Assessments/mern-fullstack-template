@@ -1,5 +1,5 @@
 # MERN-TEST - Mujtaba Qureshi  
-**Web E-Commerce Application**
+**Web-Based Developer Store Platform**
 
 ## CANDIDATE DETAILS  
 **NAME:** Mujtaba Qureshi  
@@ -18,134 +18,130 @@
 ---
 
 ## PROJECT OVERVIEW  
-Build a **web-based E-Commerce application** using **React.js** and optionally Node.js/Express/MongoDB for full-stack capability. As a mid-level MERN developer with 2 years of experience, you're expected to build a complete, real-world platform, including custom authentication, store/product modules, dashboards, and dynamic UX. Do not rely entirely on AI — your reasoning should be visible in the project structure and commit messages.
+Build a **full-stack MERN application** for developers to create and manage their own **digital product store**.
 
-### Extended Scope (Real-World Challenge)
-1. **JWT Authentication** (Login, Register, Role-based access)  
-2. **Create Developer Store Profile**  
-3. **Upload Digital Products (PDFs, ZIPs, etc.)**  
-4. **Home Page (Products Listing + Filters + Categories)**  
-5. **Product Detail Page (with mock reviews)**  
-6. **Add to Cart, Cart Listing & Mock Checkout**  
-7. **Buyer Dashboard (Purchased Items)**  
-8. **Seller Dashboard (Analytics with Chart.js)**  
-9. **Admin Dashboard (User/Product Management)**  
-10. **Mobile-Responsive Design**
-
-> Optional: Add a static AI-chat interface to simulate "Contact the Seller"
+As part of this assignment, you are expected to:
+- Design and build your own **custom REST API** using **Node.js/Express and MongoDB**
+- Create a **React.js** (or **Next.js**) frontend to interact with your APIs
+- Implement **authentication**, **file uploads**, and **role-based logic**
 
 ---
 
-## FAKESTOREAPI INTEGRATION  
-If you do not want to create a custom backend, you may use [FakeStoreAPI](https://fakestoreapi.com/docs) for product/cart logic only. However, authentication, uploads, and dashboards must be implemented manually.
+## CORE SCOPE (BUILD API YOURSELF — NO EXTERNAL FAKESTORE OR BOILERPLATE)
 
-1. **Authentication**  
-   - Prefer custom login/signup using JWT & bcrypt.
+### 1. **Authentication (JWT-based)**  
+- `POST /auth/register` — Register user with email, password, role (buyer/seller)  
+- `POST /auth/login` — Login and return JWT token  
+- Use bcrypt for hashing  
+- Protect all routes with middleware  
+- Optional: token refresh logic
 
-2. **Products**  
-   - Or use: `GET https://fakestoreapi.com/products`  
-   - `GET https://fakestoreapi.com/products/{id}`  
+### 2. **User Roles & Profiles**  
+- Roles: `buyer`, `seller`, `admin`  
+- `GET /users/me` — Fetch current user profile  
+- `PUT /users/me` — Update profile (name, bio, etc.)  
 
-3. **Carts**  
-   - `POST /carts`, `GET /carts`, `DELETE /carts/{id}`
+### 3. **Digital Product Management**  
+- `POST /products` — Seller adds a product with title, price, description, file upload (PDF/ZIP)  
+- `GET /products` — Public product list  
+- `GET /products/:id` — Product detail  
+- `DELETE /products/:id` — Seller deletes own product  
+- File uploads can be stored locally or via Cloudinary  
+
+### 4. **Product Purchase Flow (Mock Checkout)**  
+- `POST /orders` — Buyer purchases a product  
+- `GET /orders` — Buyer sees purchased products  
+- Prevent re-purchasing of same product  
+- No payment gateway needed — simulate success  
+
+### 5. **Admin Management**  
+- `GET /admin/users` — List all users  
+- `PATCH /admin/users/:id/ban` — Ban/unban user  
+- `GET /admin/products` — View/delete any product
 
 ---
 
 ## WEB SCREENS & FEATURES
 
-### 1. Login Screen
-- **Custom API**: `POST /auth/login`  
-- **JWT Token Storage**: localStorage or HttpOnly cookies  
-- **Redirect**: To Home Page on success  
+### 1. Login / Signup Screens
+- Form validation  
+- Store token and redirect upon success  
 
-### 2. Sign Up Screen
-- Custom or mocked  
-- Role selection: `buyer`, `seller`  
-- After signup: redirect to login or auto-login  
+### 2. Seller Dashboard
+- Create products  
+- View uploaded products  
+- Delete product  
+- View total downloads per product
 
-### 3. Forgot Password
-- Static with mock success message  
+### 3. Buyer Dashboard
+- View purchased products  
+- Download files  
+- Show purchase date  
 
-### 4. Home Page (Products + Filters)
-- Grid layout  
-- Filter by tag/category/price  
-- Click to go to product detail  
+### 4. Public Marketplace
+- Home page showing all products  
+- Filter by price, category, or tag  
+- Click to view product details  
 
-### 5. Product Detail Page
-- Static or mocked reviews  
-- Downloadable preview or files (if owned)  
-- "Add to Cart" button  
-
-### 6. Cart Page
-- View items  
-- Remove items  
-- Mock checkout (updates buyer dashboard)  
-
-### 7. Dashboards
-- **Buyer**: Purchased products, download buttons  
-- **Seller**: Uploaded products, product analytics using Chart.js  
-- **Admin**: List all users, block/unblock seller accounts  
-
-### 8. Mobile-Responsive Design
-- TailwindCSS or Bootstrap recommended  
+### 5. Admin Panel
+- View all users  
+- Ban/unban accounts  
+- View all products and remove violations  
 
 ---
 
-## FRONT-END REQUIREMENTS (React.js or Next.js)
+## FRONT-END REQUIREMENTS (React.js)
 
-1. **Framework**  
-   - Use Create React App or Next.js  
-   - Use **react-router-dom** or Next.js routing  
+1. **Routing**  
+   - Use `react-router-dom` for navigation  
+   - Pages: `/login`, `/signup`, `/marketplace`, `/dashboard`, `/admin`  
 
 2. **State Management**  
    - Use Redux, Zustand, or Context API  
-   - Auth token & cart state managed centrally  
+   - Handle auth and user data  
 
-3. **API Integration**  
-   - Axios or Fetch with interceptors  
-   - Handle 401, 403 errors properly  
+3. **API Layer**  
+   - Axios with interceptors  
+   - Handle 401 and API errors cleanly  
 
-4. **Structure & Modularity**  
-   - Pages, Components, Services, Stores, Constants, etc.  
+4. **Component Reusability**  
+   - Build reusable inputs, modals, cards  
 
-5. **Advanced UI**  
-   - Reusable modal, dropdown, table, file upload components  
+5. **Responsive Design**  
+   - Use TailwindCSS, Bootstrap, or plain SCSS  
 
 ---
 
-## OPTIONAL BACKEND (FULL MERN)
+## BACKEND REQUIREMENTS (MANDATORY)
 
-If you implement your own backend:
-
-- **NestJS or ExpressJS** (Node-based)  
-- **MongoDB** for users, products, purchases  
-- **JWT Auth** for protected routes  
-- **Multer/Cloudinary** for file uploads  
-- **Product search/filter endpoints**  
-- **Admin API** for dashboard controls  
+1. **Node.js + Express.js API**  
+2. **MongoDB/Mongoose** for data modeling  
+3. **Authentication using JWT**  
+4. **RESTful Routes for all features**  
+5. **Role-based access control middleware**  
+6. **File uploads (PDF, ZIP)**  
+7. **Error handling and validation**  
+8. **.env-based config (JWT_SECRET, DB_URI, etc.)**
 
 ---
 
 ## CODE QUALITY MANAGEMENT
 
-- Follow ESLint rules  
-- DRY and reusable logic  
-- Descriptive comments where needed  
-- Handle edge cases (empty products, invalid tokens, expired carts)
+- Modular backend folder structure (e.g., `routes/`, `controllers/`, `models/`)  
+- Use ESLint or Prettier if possible  
+- Include `README.md` with clear run instructions  
+- Optional: Include Swagger/OpenAPI doc for backend  
 
 ---
 
 ## CODE MANAGEMENT
 
-1. **Git Workflow**  
-   - Clear, atomic commits  
-   - Use branches like `feature/cart`, `feature/auth`, etc.
-
-2. **Pull Requests**  
-   - Summarize key changes  
-
-3. **Commit Log**  
-   - Helps us understand your thought process (vs AI-generated code)
+1. **Git Commits**  
+   - Commit regularly with clear messages  
+2. **Branches**  
+   - Feature branches preferred  
+3. **Pull Requests**  
+   - Submit via GitHub if collaborating  
 
 ---
 
@@ -153,5 +149,5 @@ If you implement your own backend:
 
 1. **Clone the Repo**
    ```bash
-   git clone https://github.com/mujtabaqureshi2/devnest.git
-   cd devnest
+   git clone https://github.com/mujtabaqureshi2/mern-test.git
+   cd mern-test
