@@ -9,16 +9,16 @@
 ---
 
 ## SUBMISSION DETAILS  
-**TOTAL DAYS: 4**
-
 **TOTAL HOURS: 16**
+
+**TOTAL DAYS: 3**
 
 **START DATE:** **2025-07-03**
 
-**SUBMISSION DEADLINE:** **2025-07-10**
+**SUBMISSION DEADLINE:** **2025-07-07**
 
-This task requires a total of 16 working hours, distributed over 4 working days. The timeline allows some flexibility, as the work can be planned and completed with an average of 4 hours per day. The purpose of this distribution is to ensure quality and manageable pacing without overburdening any single day.
-Please make sure the final submission is completed on or before July 10, 2025.
+Note:
+This task requires a total of 16 working hours, to be completed over 3 working days. The timeline giving you a practical window from Thursday, July 3rd to Tuesday, July 7th to complete the task.
 
 > **NOTE:** All features must be commit-time-tracked.  
 > **NOTE:** Include `.env.example` and detailed run instructions in `README.md`.  
