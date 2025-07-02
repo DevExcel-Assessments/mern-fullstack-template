@@ -18,7 +18,7 @@
 **SUBMISSION DEADLINE:** **2025-07-07**
 
 Note:
-This task requires a total of 16 working hours, to be completed over 3 working days. The timeline giving you a practical window from Thursday, July 3rd to Tuesday, July 7th to complete the task.
+This task requires a total of 16 working hours, to be completed over 3 days. The timeline giving you a practical window from Thursday, July 3rd to Tuesday, July 7th to complete the task.
 
 > **NOTE:** All features must be commit-time-tracked.  
 > **NOTE:** Include `.env.example` and detailed run instructions in `README.md`.  
