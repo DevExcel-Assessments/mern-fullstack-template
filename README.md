@@ -137,4 +137,7 @@ This project simulates a real-world product like **Udemy / Teachable** but scope
 - `DECISION_LOG.md` required  
   - What problems you solved  
   - Where you used docs/AI  
-  - What you would improve if given more time  
+  - What you would improve if given more time
+
+---
+
