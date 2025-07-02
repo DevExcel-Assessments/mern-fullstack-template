@@ -9,8 +9,12 @@
 ---
 
 ## SUBMISSION DETAILS  
-**START DATE:** {YYYY-MM-DD}  
-**SUBMISSION DEADLINE:** {YYYY-MM-DD + 7 days}
+**TOTAL DAYS: 4**
+**TOTAL HOURS: 16**
+**START DATE:** **2025-07-03** 
+**SUBMISSION DEADLINE:** **2025-07-10**
+
+
 
 > **NOTE:** All features must be commit-time-tracked.  
 > **NOTE:** Include `.env.example` and detailed run instructions in `README.md`.  
