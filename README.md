@@ -69,7 +69,7 @@ This project simulates a real-world product like **Udemy / Teachable** but scope
 - `POST /orders` — Enroll using mock Stripe  
 - `GET /orders/my` — View enrolled courses  
 - Prevent duplicate enrollment  
-- Bonus: Store Stripe PaymentIntent ID
+- Store Stripe PaymentIntent ID (Test mode only)
 
 ---
 
@@ -138,18 +138,3 @@ This project simulates a real-world product like **Udemy / Teachable** but scope
   - What problems you solved  
   - Where you used docs/AI  
   - What you would improve if given more time  
-
----
-
-## HOW TO RUN LOCALLY
-
-```bash
-# Backend
-cd server
-npm install
-npm run dev
-
-# Frontend
-cd client
-npm install
-npm run dev
