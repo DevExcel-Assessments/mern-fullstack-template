@@ -141,3 +141,9 @@ This project simulates a real-world product like **Udemy / Teachable** but scope
 
 ---
 
+## Figma Design
+
+**Note**: Currently, there is no Figma design available for this assignment. You are required to create a UI that follows standard design principles. We will evaluate your work based on code quality, architecture, and implementation approach
+
+---
+
